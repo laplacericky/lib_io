@@ -1,9 +1,16 @@
 
+def prompt_options_str(options):
+    return '\n'.join([ f"{i}: {x} :{i}" for i,x in enumerate(options)]) + '\n'
+
+def prompt_options(options):
+    i = int(input(prompt_options_str(options)))
+    return i, options[i]
+
 
 def limited_lines(lines, start, end, step, more_info = False):
     sl = lines[start: end: step]
     output = '\n'.join(sl) + '\n'
-    
+
     if len(sl) < len(lines):
         output += f'--More--'
         if more_info:
