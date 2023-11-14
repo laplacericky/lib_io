@@ -8,6 +8,8 @@ def prompt_options(options):
 
 
 def limited_lines(lines, start, end, step, more_info = False):
+    if len(lines) == 0:
+        return '(EMPTY)'
     sl = lines[start: end: step]
     output = '\n'.join(sl) + '\n'
 
