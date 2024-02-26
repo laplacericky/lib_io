@@ -4,6 +4,7 @@ def prompt_options_str(options):
 
 def prompt_options(options):
     i = int(input(prompt_options_str(options)))
+    print(f'Entered: {options[i]}')
     return i, options[i]
 
 
