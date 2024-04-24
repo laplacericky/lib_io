@@ -28,3 +28,6 @@ def npvector2str(x, precision=3, specifier = 'g', sep = '\t', width = ''):
 
 def npmatrix2str(x, precision=3, specifier = 'g', sep = '\t', width = ''):
     return '\n'.join([ npvector2str(x[i], precision=precision, specifier = specifier, sep = sep, width = width) for i in range(x.shape[0]) ])
+
+def np3dtensor2str(x, precision=3, specifier = 'g', sep = '\t', width = ''):
+    return f'\n------\n'.join([ npmatrix2str(x[i], precision=precision, specifier = specifier, sep = sep, width = width) for i in range(x.shape[0])])
